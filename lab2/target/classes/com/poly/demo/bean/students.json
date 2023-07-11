@@ -1,0 +1,20 @@
+[
+	{
+		"name": "nguyễn văn a",
+		"gender": true,
+		"marks": 7.5,
+		"email": "vana@gmail.com"
+	},
+	{
+		"name": "nguyễn văn b",
+		"gender": true,
+		"marks": 6,
+		"email": "vanb@gmail.com"
+	},
+	{
+		"name": "nguyễn văn c",
+		"gender": true,
+		"marks": 10,
+		"email": "vanc@gmail.com"
+	}
+]

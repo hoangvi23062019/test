@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li th:each="sv,state: ${dssv}">
+			<a th:href="@{|/student/list?index=${state.index}|}">[[${sv.name}]]</a>
+		</li>
+	</ul>
+	<h3>Student detail</h3>
+	<ul th:object="${sv}">
+		<li><i>Name</i><b th:text="*{name}"></b></li>
+		<li><i>Marks</i><b th:text="*{marks}"></b></li>
+		<li><i>Gender</i><b th:text="*{gender}"></b></li>
+		<li><i>Contact</i><b th:text="*{contact.email}"></b></li>
+		<li> <i>Subjects:</i>
+			<ul>
+				<li th:each="subject:*{subject}">
+					<b th:text="${subject}"></b>
+				</li>
+			</ul>
+		</li>
+		<li th:switch="*{#arrays.length(subject)}">
+			<i>Time: </i>
+			<b th:case="1">Mới vào</b>
+			<b th:case="2">Đang học</b>
+			<b th:case="3">Sắp ra trường</b>
+		</li>
+		<li th:if="*{marks}>9"><i>title: <b>Golden Bee</b></i></li>
+	</ul>
+</body>
+</html>
